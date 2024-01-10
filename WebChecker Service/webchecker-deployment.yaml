@@ -22,3 +22,17 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"
+          envFrom:
+            - configMapRef:
+                name: webchecker-config
+          env:
+            - name: EMAIL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: alertmanager-secret
+                  key: email-user
+            - name: EMAIL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: alertmanager-secret
+                  key: email-password
