@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webchecker-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /webchecker
+        pathType: Prefix
+        backend:
+          service:
+            name: webchecker
+            port:
+              number: 80
