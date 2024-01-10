@@ -4,3 +4,5 @@ metadata:
   name: webchecker-config
 data:
   sites-to-check: "http://example1.com,http://example2.com"
+  mq-host: "message-queue-service"
+  db-host: "database-service"
